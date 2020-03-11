@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proyecto_LFYA_Scanner", "Proyecto_LFYA_Scanner\Proyecto_LFYA_Scanner.csproj", "{944922D2-F26E-423C-8C77-333B7EB728A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{944922D2-F26E-423C-8C77-333B7EB728A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{944922D2-F26E-423C-8C77-333B7EB728A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{944922D2-F26E-423C-8C77-333B7EB728A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{944922D2-F26E-423C-8C77-333B7EB728A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A13D8CE-5863-434C-8AD0-F59C477A7EB8}
+	EndGlobalSection
+EndGlobal
