@@ -17,11 +17,17 @@ namespace Proyecto_LFYA_Scanner.RecursosTabla
             ElementosTransicion = _ElementosTransicion;
         }
 
+        public Transiciones()
+        {
+            id_Transicion = "";
+            ElementosTransicion = null;
+        }
+
         public void setid_Transicion(string _id_Transicion) {
             this.id_Transicion = _id_Transicion;
         }
         public void setElementosTransicion(List<string> _ElementosTransicion) {
-            if (_ElementosTransicion != null)
+            if (this.ElementosTransicion != null)
             {
                 foreach (var data in _ElementosTransicion)
                 {
@@ -38,14 +44,15 @@ namespace Proyecto_LFYA_Scanner.RecursosTabla
             return this.id_Transicion;
         }
 
-        public List<string> setElementosTransicion() {
+        public List<string> getElementosTransicion() {
             return this.ElementosTransicion;
         }
 
         public string getCadenaDeElementosTransicion() {
-            string Caracter = "(";
+            
             if (ElementosTransicion != null)
             {
+                string Caracter = "(";
                 for (int i = 0; i < ElementosTransicion.Count; i++)
                 {
                     if (i != (ElementosTransicion.Count - 1))

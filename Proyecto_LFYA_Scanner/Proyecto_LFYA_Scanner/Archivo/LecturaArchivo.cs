@@ -38,7 +38,7 @@ namespace Proyecto_LFYA_Scanner.Archivo
 
                 try
                 {
-                    if (caracteres[i] == '\'' && caracteres[i+1] == '\'' && caracteres[i+2] == '\'')
+                    if (caracteres[i] == '\'' && caracteres[i + 1] == '\'' && caracteres[i + 2] == '\'')
                     {
                         CadenaMenosEspacio += Convert.ToString("'''");
                         i = i + 3;
@@ -68,7 +68,7 @@ namespace Proyecto_LFYA_Scanner.Archivo
             string CadenaMenosEspacio = "";
             foreach (char Caracter in LineaLeida)
             {
-                if (Caracter != '\t' && Caracter != ' ')
+                if (Caracter != ' ' && Caracter != '\t')
                 {
                     CadenaMenosEspacio += Convert.ToString(Caracter);
                 }
@@ -93,7 +93,7 @@ namespace Proyecto_LFYA_Scanner.Archivo
             string numero = "";
             if (caracteres[0] == 'T' && caracteres[1] == 'O' && caracteres[2] == 'K' && caracteres[3] == 'E' && caracteres[4] == 'N' && caracteres[5] == ' ')
             {
-                for (int i = 0; i < caracteres.Length; i++)
+                for (int i = 6; i < caracteres.Length; i++)
                 {
                     numero += caracteres[i];
                 }
@@ -182,7 +182,7 @@ namespace Proyecto_LFYA_Scanner.Archivo
                 }
                 else
                 {
-                    if (AllCaracteres[Contador - 1] == '(' || AllCaracteres[Contador + 1] == ')' || AllCaracteres[Contador - 1] == '|' || AllCaracteres[Contador + 1] == '|' || AllCaracteres[Contador + 1] == '*' || AllCaracteres[Contador + 1] == '?' || AllCaracteres[Contador + 1] == '+' )
+                    if (AllCaracteres[Contador - 1] == '(' || AllCaracteres[Contador + 1] == ')' || AllCaracteres[Contador + 1] == '|' || AllCaracteres[Contador - 1] == '|' || AllCaracteres[Contador + 1] == '*' || AllCaracteres[Contador + 1] == '+' || AllCaracteres[Contador + 1] == '?' )
                     {
                         Contador++;
                     }
@@ -203,7 +203,7 @@ namespace Proyecto_LFYA_Scanner.Archivo
 
                 try
                 {
-                    for (int i = 0; i < AllCaracteres.Length; i++)
+                    for (int i = 1; i < (AllCaracteres.Length - 1) ; i++)
                     {
                         if (ExpresionSeparada[i - 1] != '\'' && ExpresionSeparada[i] == '\'' && ExpresionSeparada[i + 1] == '\'' && ExpresionSeparada[i + 2] != '\'' )
                         {
@@ -211,7 +211,7 @@ namespace Proyecto_LFYA_Scanner.Archivo
                         }
                         else
                         {
-                            ExpresionCompleta += Convert.ToString(ExpresionCompleta);
+                            ExpresionCompleta += Convert.ToString(ExpresionSeparada[i]);
                         }
                     }
                 }
@@ -298,7 +298,7 @@ namespace Proyecto_LFYA_Scanner.Archivo
                         int ParentesisCerrar = 0;
                         bool EsConcatenado = false;
                         char[] Particion = SignoSeparador[i].ToCharArray();
-                        for (int j = 0; j < Particion.Length; j++)
+                        for (int j = 1; j < Particion.Length; j++)
                         {
                             if (Particion[j] == '(')
                             {
@@ -362,21 +362,21 @@ namespace Proyecto_LFYA_Scanner.Archivo
             List<int> DataAOperadores = new List<int>();
             List<int> DataBOperadores = new List<int>();
 
-            if (LineaLeida.Contains('?') || LineaLeida.Contains('*') || LineaLeida.Contains('+'))
+            if (LineaLeida.Contains('*') || LineaLeida.Contains('+') || LineaLeida.Contains('?'))
             {
                 for (int i = 0; i < AllCarateres.Length; i++)
                 {
-                    if (AllCarateres[i] == '?' || AllCarateres[i] == '*' || AllCarateres[i] == '+')
+                    if (AllCarateres[i] == '*' || AllCarateres[i] == '+' || AllCarateres[i] == '?')
                     {
                         DataAOperadores.Add(i);
                         try
                         {
-                            if (AllCarateres[i -1] == ')')//para cuando con el apertura("(")
+                            if (AllCarateres[i - 1] == ')')//para cuando con el apertura("(")
                             {
                                 EsUnParentesis = true;
                             }
 
-                            for (int j = DataAOperadores[DataAOperadores.Count - 1]; j >= 0 ; j++)
+                            for (int j = DataAOperadores[DataAOperadores.Count - 1]; j >= 0 ; j--)
                             {
                                 if (EsUnParentesis)
                                 {//el punto donde debe abrir parentesis
@@ -502,6 +502,7 @@ namespace Proyecto_LFYA_Scanner.Archivo
             string EnEsteMomento = "";
             string Final = "";
             bool ProcesarCaptura = true;
+            
 
             if (Caracteres.Length == 0)//si no existe nada 
             {
@@ -514,7 +515,7 @@ namespace Proyecto_LFYA_Scanner.Archivo
 
                 try
                 {
-                    if (Caracteres[Caracter + 1 ]==' ')
+                    if (Caracteres[Caracter + 1 ] == ' ')
                     {
 
                     }
@@ -590,7 +591,7 @@ namespace Proyecto_LFYA_Scanner.Archivo
                     {
                         Caracter = Caracter + 6;
                         Final = CapturarCharsets(LineaLeida, ref Caracter);
-                        for (int i = Convert.ToInt32(EnEsteMomento); i < Convert.ToInt32(Final); i++)
+                        for (int i = Convert.ToInt32(EnEsteMomento); i <= Convert.ToInt16(Final); i++)
                         {
                             ElementosDelSet.Add(Convert.ToString(Convert.ToChar(i)));
                         }
@@ -633,7 +634,7 @@ namespace Proyecto_LFYA_Scanner.Archivo
                         Caracter++;
                     }
                 }
-                catch (Exception)
+                catch
                 {
                     errorAsignado = "Falta el Simbolo de comilla simple (')";
                     return false;
@@ -677,7 +678,7 @@ namespace Proyecto_LFYA_Scanner.Archivo
 
                                 try
                                 {
-                                    if (Caracteres[Caracter]== '\'')
+                                    if (Caracteres[Caracter] == '\'')
                                     {// si llega a encotnrar una comilla simple no continua el proceso
                                         ProcesarCaptura = false;
                                         Caracter++;
@@ -689,11 +690,11 @@ namespace Proyecto_LFYA_Scanner.Archivo
                                     return false;
                                 }
                             }
-                            for (int i = (int)Convert.ToChar(EnEsteMomento); i < (int)Convert.ToChar(Final); i++)
+                            for (int i = (int)Convert.ToChar(EnEsteMomento); i <= (int)Convert.ToChar(Final); i++)
                             {
                                 ElementosDelSet.Add(Convert.ToString((char)i));
                             }
-                            try
+                            try//comprobacion que este dentro del rango!
                             {
                                 if (Caracteres[Caracter] != '+')
                                 {
@@ -886,7 +887,7 @@ namespace Proyecto_LFYA_Scanner.Archivo
                 errorAsignado = "Revisar, No existe ningun TOKEN para ser analizado";
                 return false;
             }
-            return false;
+            return true;
         
         }
 
@@ -1051,7 +1052,7 @@ namespace Proyecto_LFYA_Scanner.Archivo
                         break;
                     }
                 }
-                if (Caracteres[Contador] == '+' || Caracteres[Contador] == '*' || Caracteres[Contador] == '?')
+                if (Caracteres[Contador] == '*' || Caracteres[Contador] == '+' || Caracteres[Contador] == '?')
                 {
                     errorAsignado = "Simbolo operador ( " + Caracteres[Contador] + " ) dentro de un lugar incorrecto";
                     return false;
@@ -1120,7 +1121,7 @@ namespace Proyecto_LFYA_Scanner.Archivo
                         {//Remplaza las palabras de reserva por letras griegas
                             try
                             {
-                                if (Caracteres[Contador] == '(' && Caracteres[Contador + 1] == '\'' )
+                                if ((Caracteres[Contador] == '(' && Caracteres[Contador + 1] == '\'' ))
                                 {
                                     LPalabra += Convert.ToString('α');
                                     Contador = Contador + 2;
@@ -1256,7 +1257,7 @@ namespace Proyecto_LFYA_Scanner.Archivo
                 errorAsignado = "Numero identificador de error incorrecto: ( " + LineasError[1] + " )";
                 return false;
             }
-            return false;
+            return true;
         }
         public bool BusquedaLenguajes(List<Set> ListaSets, List<string> ListaLenguajes, ref string errorAsignado) {
             foreach (string FindLeng in ListaLenguajes)
@@ -1337,7 +1338,6 @@ namespace Proyecto_LFYA_Scanner.Archivo
                     {
                         return false;
                     }
-
                     if (CapturarEspacios(txtOriginal[LineaT]).ToUpper() == "ACTIONS")// verificacion que posteriormente viene la parte de actions
                     {
                         LineaT++;
@@ -1411,7 +1411,9 @@ namespace Proyecto_LFYA_Scanner.Archivo
                         NoHojas++;
                         CadenaPalabras.RemoveAt(0);
                     }
-                    else if (BusquedaLenguajes(ListaSets,CadenaPalabras,ref errorAsignado) || BusquerdaPalabra(ListaSets, CadenaPalabras, ref errorAsignado))
+                    else
+                    
+                    if (BusquedaLenguajes(ListaSets,CadenaPalabras,ref errorAsignado) || BusquerdaPalabra(ListaSets, CadenaPalabras, ref errorAsignado))
                     {
                         ProcederAnalisis = false;
                         Nodo NodoProvisional = new Nodo(CadenaCompleta, CadenaCompleta, Convert.ToString(NoHojas), Convert.ToString(NoHojas), false);
@@ -1429,6 +1431,7 @@ namespace Proyecto_LFYA_Scanner.Archivo
         }
 
         public void DevolverPosFijo(ref Stack<Nodo> PilaPosfijo, ref List<Nodo> ListaHojas, List<Set> ListaSets, string ERTokenRecibido, ref int Contador, ref int NoHojas) { // este metodo realiza el analisis al posfijo de cada token
+            string error = "";
             char[] Caracteres = ERTokenRecibido.ToCharArray();
             ObtenerPosFijoDeCadena(ref PilaPosfijo, ref ListaHojas, Caracteres, ref Contador, ref NoHojas, ListaSets);
 
@@ -1484,8 +1487,9 @@ namespace Proyecto_LFYA_Scanner.Archivo
                         ObtenerPosFijoDeCadena(ref PilaPosfijo, ref ListaHojas, Caracteres, ref Contador, ref NoHojas, ListaSets);
                     }
 
-                    Nodo C1Left = PilaPosfijo.Pop();
                     Nodo C2right = PilaPosfijo.Pop();
+                    Nodo C1Left = PilaPosfijo.Pop();
+                    
 
                     if (Simbolo.getElementosContenidos() == ".")//Reglas para la CONCATENACION
                     {

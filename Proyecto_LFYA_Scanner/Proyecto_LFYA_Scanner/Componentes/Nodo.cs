@@ -16,6 +16,18 @@ namespace Proyecto_LFYA_Scanner.Componentes
         public Nodo c1 { get; set; }
         public Nodo c2 { get; set; }
 
+        public Nodo()
+        {
+            ExpresionObtenida = "";
+            ElementosContenidos = "";
+            IsNull = false;
+            AsignacionFirst = "";
+            AsignacionLast = "";
+            c1 = null;
+            c2 = null;
+
+        }
+
         public Nodo(string _ExpresionObtenida, string _ElementosContenidos, string _AsignacionFirst, string _AsignacionLast, bool _IsNull)
         {
             ExpresionObtenida = _ExpresionObtenida;
@@ -73,17 +85,7 @@ namespace Proyecto_LFYA_Scanner.Componentes
 
 
 
-        public Nodo()
-        {
-            ExpresionObtenida = "";
-            ElementosContenidos = "";
-            IsNull = false;
-            AsignacionFirst = "";
-            AsignacionLast = "";
-            c1 = null;
-            c2 = null;
-
-        }
+     
 
 
 

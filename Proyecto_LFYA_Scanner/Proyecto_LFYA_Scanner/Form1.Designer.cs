@@ -28,20 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_ExaminarArchivo = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.LST_FirstLastFollow = new System.Windows.Forms.ListBox();
+            this.DGV_transiciones = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_transiciones)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -51,55 +54,34 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 65);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1092, 617);
+            this.tabControl1.Size = new System.Drawing.Size(1409, 617);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Black;
             this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabPage2.Controls.Add(this.listBox1);
+            this.tabPage2.Controls.Add(this.LST_FirstLastFollow);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1084, 588);
+            this.tabPage2.Size = new System.Drawing.Size(1401, 588);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "First-Last-Follow";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(3, 6);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1072, 564);
-            this.listBox1.TabIndex = 0;
+            this.tabPage2.Text = "First - Last - Follow";
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Transparent;
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.DGV_transiciones);
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1084, 588);
+            this.tabPage1.Size = new System.Drawing.Size(1401, 588);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Tabla de Transiciones (AFD)";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1075, 579);
-            this.dataGridView1.TabIndex = 0;
             // 
             // btn_ExaminarArchivo
             // 
@@ -121,6 +103,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "SALIR";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -147,12 +130,59 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // LST_FirstLastFollow
+            // 
+            this.LST_FirstLastFollow.FormattingEnabled = true;
+            this.LST_FirstLastFollow.HorizontalScrollbar = true;
+            this.LST_FirstLastFollow.ItemHeight = 16;
+            this.LST_FirstLastFollow.Location = new System.Drawing.Point(-2, 3);
+            this.LST_FirstLastFollow.Name = "LST_FirstLastFollow";
+            this.LST_FirstLastFollow.ScrollAlwaysVisible = true;
+            this.LST_FirstLastFollow.Size = new System.Drawing.Size(1401, 580);
+            this.LST_FirstLastFollow.TabIndex = 2;
+            // 
+            // DGV_transiciones
+            // 
+            this.DGV_transiciones.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_transiciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.DGV_transiciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV_transiciones.DefaultCellStyle = dataGridViewCellStyle14;
+            this.DGV_transiciones.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.DGV_transiciones.Location = new System.Drawing.Point(3, 4);
+            this.DGV_transiciones.Name = "DGV_transiciones";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_transiciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.DGV_transiciones.RowHeadersWidth = 51;
+            this.DGV_transiciones.RowTemplate.Height = 24;
+            this.DGV_transiciones.Size = new System.Drawing.Size(1393, 579);
+            this.DGV_transiciones.TabIndex = 2;
+            // 
             // FormFuncionamiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(1116, 705);
+            this.ClientSize = new System.Drawing.Size(1433, 696);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
@@ -164,7 +194,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_transiciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,13 +205,13 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_ExaminarArchivo;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ListBox LST_FirstLastFollow;
+        private System.Windows.Forms.DataGridView DGV_transiciones;
     }
 }
 
