@@ -1,0 +1,1 @@
+PROGRAM x a := b c = CONST a
