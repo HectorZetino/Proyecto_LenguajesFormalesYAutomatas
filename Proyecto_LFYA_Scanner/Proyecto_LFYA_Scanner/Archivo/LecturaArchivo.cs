@@ -1431,7 +1431,7 @@ namespace Proyecto_LFYA_Scanner.Archivo
         }
 
         public void DevolverPosFijo(ref Stack<Nodo> PilaPosfijo, ref List<Nodo> ListaHojas, List<Set> ListaSets, string ERTokenRecibido, ref int Contador, ref int NoHojas) { // este metodo realiza el analisis al posfijo de cada token
-            string error = "";
+            string error = "";//en esta parte basicamente es para asignar los first last a cada uno de los datos
             char[] Caracteres = ERTokenRecibido.ToCharArray();
             ObtenerPosFijoDeCadena(ref PilaPosfijo, ref ListaHojas, Caracteres, ref Contador, ref NoHojas, ListaSets);
 

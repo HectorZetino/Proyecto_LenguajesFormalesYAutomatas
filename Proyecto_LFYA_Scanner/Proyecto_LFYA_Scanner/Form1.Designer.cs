@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.LST_FirstLastFollow = new System.Windows.Forms.ListBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.DGV_transiciones = new System.Windows.Forms.DataGridView();
             this.btn_ExaminarArchivo = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.LST_FirstLastFollow = new System.Windows.Forms.ListBox();
-            this.DGV_transiciones = new System.Windows.Forms.DataGridView();
+            this.lst_Sets = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -69,6 +70,17 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "First - Last - Follow";
             // 
+            // LST_FirstLastFollow
+            // 
+            this.LST_FirstLastFollow.FormattingEnabled = true;
+            this.LST_FirstLastFollow.HorizontalScrollbar = true;
+            this.LST_FirstLastFollow.ItemHeight = 16;
+            this.LST_FirstLastFollow.Location = new System.Drawing.Point(-2, 3);
+            this.LST_FirstLastFollow.Name = "LST_FirstLastFollow";
+            this.LST_FirstLastFollow.ScrollAlwaysVisible = true;
+            this.LST_FirstLastFollow.Size = new System.Drawing.Size(1401, 580);
+            this.LST_FirstLastFollow.TabIndex = 2;
+            // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Transparent;
@@ -82,6 +94,42 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Tabla de Transiciones (AFD)";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // DGV_transiciones
+            // 
+            this.DGV_transiciones.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_transiciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DGV_transiciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV_transiciones.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DGV_transiciones.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.DGV_transiciones.Location = new System.Drawing.Point(3, 4);
+            this.DGV_transiciones.Name = "DGV_transiciones";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_transiciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.DGV_transiciones.RowHeadersWidth = 51;
+            this.DGV_transiciones.RowTemplate.Height = 24;
+            this.DGV_transiciones.Size = new System.Drawing.Size(1393, 579);
+            this.DGV_transiciones.TabIndex = 2;
             // 
             // btn_ExaminarArchivo
             // 
@@ -130,59 +178,22 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // LST_FirstLastFollow
+            // lst_Sets
             // 
-            this.LST_FirstLastFollow.FormattingEnabled = true;
-            this.LST_FirstLastFollow.HorizontalScrollbar = true;
-            this.LST_FirstLastFollow.ItemHeight = 16;
-            this.LST_FirstLastFollow.Location = new System.Drawing.Point(-2, 3);
-            this.LST_FirstLastFollow.Name = "LST_FirstLastFollow";
-            this.LST_FirstLastFollow.ScrollAlwaysVisible = true;
-            this.LST_FirstLastFollow.Size = new System.Drawing.Size(1401, 580);
-            this.LST_FirstLastFollow.TabIndex = 2;
-            // 
-            // DGV_transiciones
-            // 
-            this.DGV_transiciones.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_transiciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
-            this.DGV_transiciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV_transiciones.DefaultCellStyle = dataGridViewCellStyle14;
-            this.DGV_transiciones.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.DGV_transiciones.Location = new System.Drawing.Point(3, 4);
-            this.DGV_transiciones.Name = "DGV_transiciones";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_transiciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            this.DGV_transiciones.RowHeadersWidth = 51;
-            this.DGV_transiciones.RowTemplate.Height = 24;
-            this.DGV_transiciones.Size = new System.Drawing.Size(1393, 579);
-            this.DGV_transiciones.TabIndex = 2;
+            this.lst_Sets.FormattingEnabled = true;
+            this.lst_Sets.ItemHeight = 16;
+            this.lst_Sets.Location = new System.Drawing.Point(1427, 87);
+            this.lst_Sets.Name = "lst_Sets";
+            this.lst_Sets.Size = new System.Drawing.Size(331, 596);
+            this.lst_Sets.TabIndex = 5;
             // 
             // FormFuncionamiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(1433, 696);
+            this.ClientSize = new System.Drawing.Size(1764, 696);
+            this.Controls.Add(this.lst_Sets);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
@@ -212,6 +223,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ListBox LST_FirstLastFollow;
         private System.Windows.Forms.DataGridView DGV_transiciones;
+        private System.Windows.Forms.ListBox lst_Sets;
     }
 }
 
